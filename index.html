@@ -315,19 +315,45 @@
       font-weight: 600;
     }
 
-    /* Skills Badges */
-    .skills-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
+    /* Tech Alchemy / Logo Grid Styling */
+    .tech-alchemy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
     }
 
-    .skill-badge {
-      background: var(--bg-card);
+    .tech-card {
+      background: #ffffff;
       border: 1px solid var(--border-color);
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
+      border-radius: 12px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      min-height: 110px;
+    }
+
+    .tech-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+      border-color: var(--accent);
+    }
+
+    .tech-card img {
+      max-width: 100%;
+      max-height: 60px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+
+    .tech-card span {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #0f172a;
+      text-align: center;
     }
 
     /* Referees / Contact */
@@ -369,6 +395,9 @@
       }
       .nav-links {
         display: none;
+      }
+      .tech-alchemy-grid {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
       }
     }
   </style>
@@ -537,7 +566,7 @@
     </div>
   </section>
 
-  <!-- Publications Anchor Section (For Direct Navigation Link) -->
+  <!-- Publications Anchor Section -->
   <section id="publications">
     <div class="container">
       <h2 class="section-title">Peer-Reviewed Publications Summary</h2>
@@ -566,7 +595,7 @@
     </div>
   </section>
 
-  <!-- Journey & Education -->
+  <!-- Journey & Tech Alchemy Section -->
   <section id="journey">
     <div class="container">
       <h2 class="section-title">Academic Journey</h2>
@@ -585,16 +614,39 @@
         </div>
       </div>
 
-      <h3 style="margin-top: 3rem; margin-bottom: 1rem;">Technical Skills</h3>
-      <div class="skills-container">
-        <span class="skill-badge">Python</span>
-        <span class="skill-badge">R</span>
-        <span class="skill-badge">MATLAB</span>
-        <span class="skill-badge">NCL</span>
-        <span class="skill-badge">UTrack / HYSPLIT</span>
-        <span class="skill-badge">ArcGIS / QGIS</span>
-        <span class="skill-badge">ERA5 / CMIP6 Reanalysis</span>
-        <span class="skill-badge">LaTeX</span>
+      <!-- TECH ALCHEMY / TECHNICAL SKILLS LOGOS -->
+      <h3 style="margin-top: 3rem; margin-bottom: 0.5rem; color: var(--accent);">Tech Alchemy</h3>
+      <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.95rem;">Computational tools, diagnostic models, and software platforms utilized in my research:</p>
+      
+      <div class="tech-alchemy-grid">
+        <div class="tech-card">
+          <img src="NCL.jpg" alt="NCL - NCAR Command Language">
+          <span>NCL</span>
+        </div>
+        <div class="tech-card">
+          <img src="NCAR.jpg" alt="NCAR Diagnostics">
+          <span>NCAR</span>
+        </div>
+        <div class="tech-card">
+          <img src="PYTHON.jpg" alt="Python Programming">
+          <span>Python</span>
+        </div>
+        <div class="tech-card">
+          <img src="MATLAB-Symbol.jpg" alt="MATLAB">
+          <span>MATLAB</span>
+        </div>
+        <div class="tech-card">
+          <img src="CDO.jpg" alt="CDO - Climate Data Operators">
+          <span>CDO</span>
+        </div>
+        <div class="tech-card">
+          <img src="Q_ARCGIS.jpg" alt="QGIS and ArcGIS">
+          <span>GIS / ArcGIS / QGIS</span>
+        </div>
+        <div class="tech-card">
+          <img src="UTRACK_MODEL.png" alt="UTrack Lagrangian Model">
+          <span>UTrack Model</span>
+        </div>
       </div>
     </div>
   </section>
