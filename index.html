@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name | Academic Portfolio</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- Inter & Outfit Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS Variables for Styling */
+    :root {
+      --bg-dark: #0f172a;
+      --bg-card: #1e293b;
+      --accent: #38bdf8;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: #334155;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Outfit', sans-serif;
+      color: #fff;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Navigation Bar */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 160px 0 100px;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-text .subtitle {
+      font-size: 1.25rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .hero-text p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0f172a;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border-color);
+      color: #fff;
+      background: transparent;
+    }
+
+    .hero-img img {
+      width: 100%;
+      border-radius: 16px;
+      border: 2px solid var(--border-color);
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5);
+    }
+
+    /* Section Global Styling */
+    section {
+      padding: 80px 0;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+    }
+
+    /* Cards Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      border-radius: 12px;
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Publications List */
+    .pub-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .pub-tag {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent);
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .pub-authors {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin: 0.5rem 0;
+    }
+
+    /* Academic Journey Timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+      border-left: 2px solid var(--border-color);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .timeline-date {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Skills Badges */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .skill-badge {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* Referees / Contact */
+    .contact-info {
+      display: flex;
+      gap: 2rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+    }
+
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      font-size: 0.9rem;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 120px;
+        text-align: center;
+      }
+      .btn-group {
+        justify-content: center;
+      }
+      .hero-img {
+        max-width: 250px;
+        margin: 0 auto;
+      }
+      .nav-links {
+        display: none; /* Add JS toggle for mobile menu if needed */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">Your Name</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#journey">Journey</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="container">
+    <section class="hero" id="about">
+      <div class="hero-text">
+        <h1>Your Name</h1>
+        <div class="subtitle">PhD Researcher | Your Field / Specialization</div>
+        <p>Short pitch describing your research focus. For example: Investigating atmospheric rivers and extreme weather patterns to support global water security and resilient infrastructure planning.</p>
+        <div class="btn-group">
+          <a href="#publications" class="btn btn-primary"><i class="fa-solid fa-book-open"></i> Explore Publications</a>
+          <a href="#" class="btn btn-secondary"><i class="fa-solid fa-file-pdf"></i> Download CV</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="https://via.placeholder.com/320x380" alt="Profile Picture">
+      </div>
+    </section>
+  </div>
+
+  <!-- Research Interests -->
+  <section id="research">
+    <div class="container">
+      <h2 class="section-title">Research Interests</h2>
+      <p class="section-subtitle">Core themes of my academic work</p>
+
+      <div class="grid">
+        <div class="card">
+          <i class="fa-solid fa-cloud-showers-heavy" style="font-size: 1.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+          <h3>Topic Area 1</h3>
+          <p>Brief summary of what you study here, including specific methods, models, or datasets used.</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-chart-line" style="font-size: 1.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+          <h3>Topic Area 2</h3>
+          <p>Brief summary of extreme events, data-driven approaches, machine learning, or statistical analysis.</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-globe" style="font-size: 1.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+          <h3>Topic Area 3</h3>
+          <p>Impact, policy-relevant insights, global risk assessment, or sustainable planning solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications">
+    <div class="container">
+      <h2 class="section-title">Selected Publications</h2>
+      <p class="section-subtitle">Journal papers and conference proceedings</p>
+
+      <div class="pub-item">
+        <span class="pub-tag">Journal Article</span>
+        <h3>Title of your published paper or upcoming journal manuscript</h3>
+        <p class="pub-authors">Your Name, Co-Author A, Co-Author B (2026). <em>Journal Name</em>.</p>
+        <a href="#" target="_blank"><i class="fa-solid fa-link"></i> DOI: 10.1000/xyz123</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-tag">Conference</span>
+        <h3>Title of your presentation or abstract at an international conference</h3>
+        <p class="pub-authors">Your Name, Co-Author A (2025). <em>Conference Name</em>.</p>
+        <a href="#" target="_blank"><i class="fa-solid fa-link"></i> Abstract Link</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey & Education -->
+  <section id="journey">
+    <div class="container">
+      <h2 class="section-title">Academic Journey</h2>
+      <p class="section-subtitle">Education, positions, and awards</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2023 - Present</div>
+          <h3>PhD Candidate in Your Specialization</h3>
+          <p>University Name. Research focusing on big data analysis and hydro-climatology.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2021 - 2023</div>
+          <h3>Master of Technology (M.Tech)</h3>
+          <p>University Name. Graduated with Honors / Award recipient.</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 3rem; margin-bottom: 1rem;">Technical Skills</h3>
+      <div class="skills-container">
+        <span class="skill-badge">Python</span>
+        <span class="skill-badge">R</span>
+        <span class="skill-badge">MATLAB</span>
+        <span class="skill-badge">ArcGIS / QGIS</span>
+        <span class="skill-badge">NetCDF Data Handling</span>
+        <span class="skill-badge">LaTeX</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact & Collaboration</h2>
+      <p class="section-subtitle">Get in touch for research inquiries</p>
+
+      <div class="card">
+        <h3>Your Full Name</h3>
+        <p>Department / Research Group</p>
+        <p>University Name, City, Country</p>
+        
+        <div class="contact-info">
+          <a href="mailto:email@domain.edu"><i class="fa-solid fa-envelope"></i> email@domain.edu</a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="#"><i class="fa-brands fa-google-scholar"></i> Google Scholar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Your Name. Research Portfolio.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
