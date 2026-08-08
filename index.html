@@ -315,47 +315,49 @@
       font-weight: 600;
     }
 
-    /* Tech Alchemy / Logo Grid Styling */
+    /* Tools and Software Logo Grid Styling */
     .tech-alchemy-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 1.25rem;
-      margin-top: 1.5rem;
-      width: 100%;
+      display: grid !important;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)) !important;
+      gap: 1.25rem !important;
+      margin-top: 1.5rem !important;
+      width: 100% !important;
     }
 
     .tech-card {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-      height: 120px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background: #ffffff !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: 12px !important;
+      padding: 0.75rem !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: var(--transition) !important;
+      height: 110px !important;
+      width: 100% !important;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
     }
 
     .tech-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(56, 189, 248, 0.25);
-      border-color: var(--accent);
+      transform: translateY(-5px) !important;
+      box-shadow: 0 10px 20px rgba(56, 189, 248, 0.25) !important;
+      border-color: var(--accent) !important;
     }
 
     .tech-card img {
-      width: 100%;
-      height: 55px;
-      object-fit: contain;
-      margin-bottom: 0.5rem;
+      width: 100% !important;
+      height: 50px !important;
+      object-fit: contain !important;
+      margin-bottom: 0.4rem !important;
     }
 
     .tech-card span {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #0f172a;
-      text-align: center;
+      font-size: 0.8rem !important;
+      font-weight: 600 !important;
+      color: #0f172a !important;
+      text-align: center !important;
+      line-height: 1.1 !important;
     }
 
     /* Referees / Contact */
@@ -399,7 +401,7 @@
         display: none;
       }
       .tech-alchemy-grid {
-        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important;
       }
     }
   </style>
@@ -616,25 +618,25 @@
         </div>
       </div>
 
-      <!-- TOOLS AND SOFTWARE / TECHNICAL SKILLS LOGOS -->
+      <!-- TOOLS AND SOFTWARE LOGO GRID -->
       <h3 style="margin-top: 3rem; margin-bottom: 0.5rem; color: var(--accent);">TOOLS AND SOFTWARE</h3>
       <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.95rem;">Computational tools, diagnostic models, and software platforms utilized in my research:</p>
       
       <div class="tech-alchemy-grid">
         <div class="tech-card">
-          <img src="NCL.jpg" alt="NCL - NCAR Command Language">
+          <img src="NCL.jpg" alt="NCL">
           <span>NCL</span>
         </div>
         <div class="tech-card">
-          <img src="LINUX.jpg" alt="Linux OS">
+          <img src="LINUX.jpg" alt="Linux">
           <span>Linux</span>
         </div>
         <div class="tech-card">
-          <img src="NCAR.jpg" alt="NCAR Diagnostics">
+          <img src="NCAR.jpg" alt="NCAR">
           <span>NCAR</span>
         </div>
         <div class="tech-card">
-          <img src="PYTHON.jpg" alt="Python Programming">
+          <img src="PYTHON.jpg" alt="Python">
           <span>Python</span>
         </div>
         <div class="tech-card">
@@ -642,15 +644,15 @@
           <span>MATLAB</span>
         </div>
         <div class="tech-card">
-          <img src="CDO.jpg" alt="CDO - Climate Data Operators">
+          <img src="CDO.jpg" alt="CDO">
           <span>CDO</span>
         </div>
         <div class="tech-card">
-          <img src="Q_ARCGIS.jpg" alt="QGIS and ArcGIS">
+          <img src="Q_ARCGIS.jpg" alt="GIS">
           <span>GIS / ArcGIS / QGIS</span>
         </div>
         <div class="tech-card">
-          <img src="UTRACK_MODEL.png" alt="UTrack Lagrangian Model">
+          <img src="UTRACK_MODEL.png" alt="UTrack Model">
           <span>UTrack Model</span>
         </div>
       </div>
