@@ -315,59 +315,49 @@
       font-weight: 600;
     }
 
-    /* ==========================================
-       TECH ALCHEMY BANNER SETUP (MATCHING REFERENCE)
-       ========================================== */
-    .tech-alchemy-banner {
-      margin-top: 3rem;
-      border-radius: 8px;
-      overflow: hidden;
-      background: #eef2f5;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* Tools and Software Grid: Fixed to 4 columns (4 top, 4 bottom) */
+    .tech-alchemy-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 1.5rem !important;
+      margin-top: 1.5rem !important;
+      width: 100% !important;
     }
 
-    .tech-alchemy-header {
-      background: #236c97;
-      color: #ffffff;
-      text-align: center;
-      padding: 1rem 1.5rem;
+    .tech-card {
+      background: #ffffff !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: 12px !important;
+      padding: 1rem !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: var(--transition) !important;
+      height: 125px !important;
+      width: 100% !important;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
     }
 
-    .tech-alchemy-header h3 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin: 0;
-      letter-spacing: 0.5px;
+    .tech-card:hover {
+      transform: translateY(-5px) !important;
+      box-shadow: 0 10px 20px rgba(56, 189, 248, 0.25) !important;
+      border-color: var(--accent) !important;
     }
 
-    .tech-alchemy-body {
-      padding: 2rem 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
+    .tech-card img {
+      width: 100% !important;
+      height: 55px !important;
+      object-fit: contain !important;
+      margin-bottom: 0.5rem !important;
     }
 
-    .tech-logo-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.5rem;
-      transition: var(--transition);
-    }
-
-    .tech-logo-item:hover {
-      transform: scale(1.05);
-    }
-
-    .tech-logo-item img {
-      max-height: 65px;
-      width: auto;
-      max-width: 180px;
-      object-fit: contain;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+    .tech-card span {
+      font-size: 0.85rem !important;
+      font-weight: 600 !important;
+      color: #0f172a !important;
+      text-align: center !important;
+      line-height: 1.2 !important;
     }
 
     /* Referees / Contact */
@@ -410,13 +400,9 @@
       .nav-links {
         display: none;
       }
-      .tech-alchemy-body {
-        gap: 1.25rem;
-        padding: 1.25rem 0.75rem;
-      }
-      .tech-logo-item img {
-        max-height: 48px;
-        max-width: 120px;
+      .tech-alchemy-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
       }
     }
   </style>
@@ -614,7 +600,7 @@
     </div>
   </section>
 
-  <!-- Journey & Tech Alchemy Section -->
+  <!-- Journey & Tools/Software Section -->
   <section id="journey">
     <div class="container">
       <h2 class="section-title">Academic Journey</h2>
@@ -633,39 +619,44 @@
         </div>
       </div>
 
-      <!-- TECH ALCHEMY BANNER CONTAINER (EXACT MATCH TO REFERENCE PHOTO) -->
-      <div class="tech-alchemy-banner">
-        <div class="tech-alchemy-header">
-          <h3>Tech Alchemy</h3>
+      <!-- TOOLS AND SOFTWARE LOGO GRID (4 top, 4 bottom) -->
+      <h3 style="margin-top: 3rem; margin-bottom: 0.5rem; color: var(--accent);">TOOLS AND SOFTWARE</h3>
+      <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.95rem;">Computational tools, diagnostic models, and software platforms utilized in my research:</p>
+      
+      <div class="tech-alchemy-grid">
+        <div class="tech-card">
+          <img src="NCL.jpg" alt="NCL">
+          <span>NCL</span>
         </div>
-        <div class="tech-alchemy-body">
-          <div class="tech-logo-item">
-            <img src="NCL.jpg" alt="NCL">
-          </div>
-          <div class="tech-logo-item">
-            <img src="NCAR.jpg" alt="NCAR">
-          </div>
-          <div class="tech-logo-item">
-            <img src="LINUX.jpg" alt="Linux">
-          </div>
-          <div class="tech-logo-item">
-            <img src="PYTHON.jpg" alt="Python">
-          </div>
-          <div class="tech-logo-item">
-            <img src="MATLAB-Symbol.jpg" alt="MATLAB">
-          </div>
-          <div class="tech-logo-item">
-            <img src="CDO.jpg" alt="CDO">
-          </div>
-          <div class="tech-logo-item">
-            <img src="Q_ARCGIS.jpg" alt="GIS / ArcGIS / QGIS">
-          </div>
-          <div class="tech-logo-item">
-            <img src="UTRACK_MODEL.png" alt="UTrack Model">
-          </div>
+        <div class="tech-card">
+          <img src="LINUX.jpg" alt="Linux">
+          <span>Linux</span>
+        </div>
+        <div class="tech-card">
+          <img src="NCAR.jpg" alt="NCAR">
+          <span>NCAR</span>
+        </div>
+        <div class="tech-card">
+          <img src="PYTHON.jpg" alt="Python">
+          <span>Python</span>
+        </div>
+        <div class="tech-card">
+          <img src="MATLAB-Symbol.jpg" alt="MATLAB">
+          <span>MATLAB</span>
+        </div>
+        <div class="tech-card">
+          <img src="CDO.jpg" alt="CDO">
+          <span>CDO</span>
+        </div>
+        <div class="tech-card">
+          <img src="Q_ARCGIS.jpg" alt="GIS">
+          <span>GIS / ArcGIS / QGIS</span>
+        </div>
+        <div class="tech-card">
+          <img src="UTRACK_MODEL.png" alt="UTrack Model">
+          <span>UTrack Model</span>
         </div>
       </div>
-
     </div>
   </section>
 
